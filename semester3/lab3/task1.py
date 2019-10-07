@@ -38,7 +38,7 @@ class Nodes:
 		return results
 
 	def insert_node(self,position,value):
-		"""Searching Node in LinkedList (Nodes)"""
+		"""Insert Node in LinkedList (Nodes)"""
 		current_node = self.head
 		node_id = 1
 		while current_node:
