@@ -1,4 +1,4 @@
-# Task 1
+# Task 2
 class Node:
 	def __init__(self,value):
 		self.data = value
@@ -90,5 +90,6 @@ print(', '.join(nodes.display()))
 # Part 3
 print("[+] Traverse the list forward")
 print(', '.join(nodes.display()))
+# Part 4
 print("[+] Traverse the list backward")
 print(', '.join(nodes.display(True)))
