@@ -64,6 +64,11 @@ class Nodes:
 		"""Insert node at a Specific Position"""
 		if not isinstance(node,Node):
 			node = Node(node)
+		id position == 1:
+			node.nextNode = self.head
+			self.head = node
+			self.size+=1
+			return
 		currentNode = self.head
 		nodeId = 1
 		while currentNode:
@@ -84,6 +89,7 @@ class Nodes:
 		if position == 1:
 			self.head = self.head.nextNode
 			self.head.nextNode
+			self.size+=1
 			return True
 		currentNode = self.head
 		nodeId = 1
