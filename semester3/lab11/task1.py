@@ -1,56 +1,38 @@
-class Item:
+class Node:
 	def __init__(self,data):
 		self.data = data
-		self.next = None
-
+		self.nextNode = None
+		
 class Queue:
 	def __init__(self):
 		self.createQueue()
-
 	def createQueue(self):
 		self.head = None
 		self.tail = None
-		print("Queue created")
 
-	def enqueue(self,item):
-		item = Item(item)
+	def enQueue(self,node):
+		node = Node(node)
 		if not self.head:
-			self.head = item
+			self.head = node
 		else:
-			self.tail.next = item
-		self.tail = item
-		return True
+			self.tail.nextNode = node
+		self.tail = node
 
-	def dequeue(self):
-		item = self.head.data
-		self.head = self.head.next
-		return item
+	def deQueue(self):
+		node = self.head.data
+		self.head = self.head.nextNode
+		return node
 
 	def isEmpty(self):
-		return ("Yes","No")[bool(self.head)]
+		if self.head:
+			return False
+		else:
+			return True
 
 	def display(self):
-		currentItem = self.head
-		while currentItem:
-			print(currentItem.data)
-			currentItem = currentItem.next
-
-q = Queue()
-print("Queue is empty:",q.isEmpty())
-print("Adding values 1, 7, 5, 2 ")
-q.enqueue(1)
-q.enqueue(7)
-q.enqueue(5)
-q.enqueue(2)
-print("Displaying Queue items")
-q.display()
-print("removing two items at front")
-q.dequeue()
-q.dequeue()
-print("Displaying Queue items")
-q.display()
-print("Insert new value 9")
-q.enqueue(9)
-print("Queue is empty:",q.isEmpty())
-print("Displaying Queue items")
-q.display()
+		datas = []
+		currentNode = self.head
+		while currentNode:
+			datas.append(currentNode.data)
+			currentNode = currentNode.nextNode
+		return datas
